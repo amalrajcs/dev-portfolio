@@ -1,24 +1,39 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { 
+  Code2, 
+  FileCode, 
+  Server, 
+  Database, 
+  Cloud, 
+  Container, 
+  Palette,
+  Terminal,
+  GitBranch,
+  Figma,
+  Send,
+  LayoutGrid,
+  FileText
+} from "lucide-react";
 
 const skills = [
-  { name: "React / Next.js", level: 95, icon: "⚛️" },
-  { name: "TypeScript", level: 90, icon: "📘" },
-  { name: "Node.js", level: 88, icon: "🟢" },
-  { name: "Python", level: 75, icon: "🐍" },
-  { name: "PostgreSQL / MongoDB", level: 85, icon: "🗄️" },
-  { name: "AWS / Cloud", level: 78, icon: "☁️" },
-  { name: "Docker / DevOps", level: 72, icon: "🐳" },
-  { name: "UI/UX Design", level: 82, icon: "🎨" },
+  { name: "React / Next.js", level: 95, icon: Code2 },
+  { name: "TypeScript", level: 90, icon: FileCode },
+  { name: "Node.js", level: 88, icon: Server },
+  { name: "Python", level: 75, icon: Terminal },
+  { name: "PostgreSQL / MongoDB", level: 85, icon: Database },
+  { name: "AWS / Cloud", level: 78, icon: Cloud },
+  { name: "Docker / DevOps", level: 72, icon: Container },
+  { name: "UI/UX Design", level: 82, icon: Palette },
 ];
 
 const tools = [
-  { name: "VS Code", icon: "💻" },
-  { name: "Git", icon: "🔀" },
-  { name: "Figma", icon: "🎨" },
-  { name: "Postman", icon: "📮" },
-  { name: "Vercel", icon: "▲" },
-  { name: "Notion", icon: "📝" },
+  { name: "VS Code", icon: Code2 },
+  { name: "Git", icon: GitBranch },
+  { name: "Figma", icon: Figma },
+  { name: "Postman", icon: Send },
+  { name: "Vercel", icon: LayoutGrid },
+  { name: "Notion", icon: FileText },
 ];
 
 const AnimatedCounter = ({ value, isInView }: { value: number; isInView: boolean }) => {
@@ -52,6 +67,8 @@ const AnimatedCounter = ({ value, isInView }: { value: number; isInView: boolean
 };
 
 const SkillBar = ({ skill, index, isInView }: { skill: typeof skills[0]; index: number; isInView: boolean }) => {
+  const IconComponent = skill.icon;
+  
   return (
     <motion.div
       initial={{ opacity: 0, x: -30 }}
@@ -61,13 +78,13 @@ const SkillBar = ({ skill, index, isInView }: { skill: typeof skills[0]; index: 
     >
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-3">
-          <motion.span
-            className="text-2xl"
+          <motion.div
+            className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center"
             whileHover={{ scale: 1.2, rotate: 10 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            {skill.icon}
-          </motion.span>
+            <IconComponent className="w-5 h-5 text-primary" />
+          </motion.div>
           <span className="font-medium">{skill.name}</span>
         </div>
         <span className="text-primary font-display font-semibold">
@@ -122,26 +139,29 @@ const SkillsSection = () => {
           <div>
             <h3 className="font-display font-semibold text-xl mb-6">Tools & Technologies</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-              {tools.map((tool, index) => (
-                <motion.div
-                  key={tool.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, borderColor: "hsl(var(--primary) / 0.3)" }}
-                  className="glass-card p-4 rounded-xl text-center cursor-pointer"
-                >
-                  <motion.span
-                    className="text-3xl block mb-2"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.5 }}
+              {tools.map((tool, index) => {
+                const IconComponent = tool.icon;
+                return (
+                  <motion.div
+                    key={tool.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05, borderColor: "hsl(var(--primary) / 0.3)" }}
+                    className="glass-card p-4 rounded-xl text-center cursor-pointer"
                   >
-                    {tool.icon}
-                  </motion.span>
-                  <span className="text-sm font-medium">{tool.name}</span>
-                </motion.div>
-              ))}
+                    <motion.div
+                      className="w-12 h-12 mx-auto mb-2 rounded-lg bg-primary/10 flex items-center justify-center"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <IconComponent className="w-6 h-6 text-primary" />
+                    </motion.div>
+                    <span className="text-sm font-medium">{tool.name}</span>
+                  </motion.div>
+                );
+              })}
             </div>
 
             {/* Additional info card */}

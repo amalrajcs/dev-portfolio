@@ -4,17 +4,14 @@ import AnimatedBackground from "@/components/AnimatedBackground";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
-import CTASection from "@/components/sections/CTASection";
 import ResumeSection from "@/components/sections/ResumeSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ContactSection from "@/components/sections/ContactSection";
-import ArticlesSection from "@/components/sections/ArticlesSection";
-import ProfilesSection from "@/components/sections/ProfilesSection";
 import SocialSection from "@/components/sections/SocialSection";
 import Footer from "@/components/Footer";
 
-const sections = ["hero", "about", "cta", "resume", "projects", "skills", "articles", "profiles", "contact"];
+const sections = ["hero", "about", "resume", "projects", "skills", "contact"];
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -70,9 +67,6 @@ const Index = () => {
           {/* About Section */}
           <AboutSection />
 
-          {/* CTA Section */}
-          <CTASection onNavigate={handleNavigate} />
-
           {/* Resume Section */}
           <ResumeSection />
 
@@ -81,12 +75,6 @@ const Index = () => {
 
           {/* Skills Section */}
           <SkillsSection />
-
-          {/* Articles Section */}
-          <ArticlesSection />
-
-          {/* Coding Profiles Section */}
-          <ProfilesSection />
 
           {/* Contact Section */}
           <ContactSection />

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Sparkles } from "lucide-react";
+import profileImage from "@/assets/profile-image.jpg";
 
 interface HeroSectionProps {
   onNavigate: (section: string) => void;
@@ -35,6 +36,32 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         viewport={{ once: true }}
         className="max-w-4xl mx-auto text-center"
       >
+        {/* Profile Image */}
+        <motion.div 
+          variants={itemVariants}
+          className="mb-8"
+        >
+          <motion.div
+            className="relative w-32 h-32 md:w-40 md:h-40 mx-auto"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <div className="absolute inset-0 rounded-full bg-gradient-primary animate-pulse opacity-50 blur-xl" />
+            <img
+              src={profileImage}
+              alt="John Doe - Full Stack Developer"
+              className="relative w-full h-full rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+            />
+            <motion.div
+              className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-background flex items-center justify-center"
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <span className="text-xs">✓</span>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
         {/* Badge */}
         <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
           <Sparkles className="w-4 h-4 text-primary" />
@@ -88,7 +115,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         {/* CTA Buttons */}
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
           <motion.button
-            onClick={() => onNavigate("cta")}
+            onClick={() => onNavigate("contact")}
             className="glow-button text-primary-foreground font-display"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
