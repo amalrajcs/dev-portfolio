@@ -19,7 +19,7 @@ const Footer = () => {
         </motion.a>
 
         <p className="text-sm text-muted-foreground flex items-center gap-1">
-          Made with <Heart className="w-4 h-4 text-destructive" /> by John Doe © {new Date().getFullYear()}
+          © 2025 Amal Raj . All right reserved.
         </p>
 
         <div className="flex items-center gap-4 text-sm text-muted-foreground">

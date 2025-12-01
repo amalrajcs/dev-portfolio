@@ -13,27 +13,30 @@ import {
   Figma,
   Send,
   LayoutGrid,
-  FileText
+  FileText,
+  ChevronsLeftRight,
+  WandSparkles, Pencil
 } from "lucide-react";
 
 const skills = [
-  { name: "React / Next.js", level: 95, icon: Code2 },
-  { name: "TypeScript", level: 90, icon: FileCode },
+  { name: "React js", level: 90, icon: Code2 },
   { name: "Node.js", level: 88, icon: Server },
-  { name: "Python", level: 75, icon: Terminal },
-  { name: "PostgreSQL / MongoDB", level: 85, icon: Database },
-  { name: "AWS / Cloud", level: 78, icon: Cloud },
-  { name: "Docker / DevOps", level: 72, icon: Container },
-  { name: "UI/UX Design", level: 82, icon: Palette },
+  { name: "Python", level: 81, icon: Terminal },
+  { name: "MongoDB", level: 85, icon: Database },
+  { name: "UI/UX Design", level: 84, icon: Palette },
+  { name: "Tailwind CSS", level: 83, icon: Palette },
+  { name: "Front End", level: 92, icon: Palette },
 ];
 
 const tools = [
   { name: "VS Code", icon: Code2 },
   { name: "Git", icon: GitBranch },
   { name: "Figma", icon: Figma },
-  { name: "Postman", icon: Send },
+  { name: "AI", icon: ChevronsLeftRight },
+  { name: "Adobe XD", icon: Pencil },
   { name: "Vercel", icon: LayoutGrid },
   { name: "Notion", icon: FileText },
+  { name: "Adobe Photoshop", icon: WandSparkles },
 ];
 
 const AnimatedCounter = ({ value, isInView }: { value: number; isInView: boolean }) => {
@@ -174,10 +177,10 @@ const SkillsSection = () => {
             >
               <h4 className="font-display font-semibold mb-3">Always Learning</h4>
               <p className="text-sm text-muted-foreground mb-4">
-                Currently exploring AI/ML integration in web apps, Web3 technologies, and advanced system design patterns.
+                Always learning — Currently exploring advanced web development and UI/UX design to create modern, user-focused digital experiences.
               </p>
               <div className="flex flex-wrap gap-2">
-                {["AI/ML", "Web3", "System Design", "Mobile Dev"].map((topic) => (
+                {["AI", "System Design", "Dev"].map((topic) => (
                   <span
                     key={topic}
                     className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary"

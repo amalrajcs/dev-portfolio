@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Code2, Palette, Rocket, Award } from "lucide-react";
+import abtImage from "@/assets/profile-image.jpg";
 
 const AboutSection = () => {
   const containerVariants = {
@@ -25,7 +26,6 @@ const AboutSection = () => {
     { icon: Code2, title: "Clean Code", description: "Writing maintainable, scalable code" },
     { icon: Palette, title: "UI/UX Design", description: "Creating beautiful user experiences" },
     { icon: Rocket, title: "Performance", description: "Optimizing for speed & efficiency" },
-    { icon: Award, title: "Best Practices", description: "Following industry standards" },
   ];
 
   return (
@@ -55,9 +55,17 @@ const AboutSection = () => {
               
               {/* Main image container */}
               <div className="absolute inset-8 rounded-full glass-card overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-8xl">👨‍💻</span>
-                </div>
+
+                {/* <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+                  { <span className="text-8xl">👨‍💻</span> }
+                </div> */}
+
+                <div className="absolute inset-0 rounded-full bg-gradient-primary animate-pulse opacity-50 blur-xl" />
+            <img
+              src={abtImage}
+              alt="Amalraj - Full Stack Developer"
+              className="relative w-full h-full rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+            />
               </div>
 
               {/* Floating badges */}
@@ -73,7 +81,14 @@ const AboutSection = () => {
                 animate={{ y: [5, -5, 5] }}
                 transition={{ duration: 4, repeat: Infinity, delay: 1 }}
               >
-                <span className="text-sm font-medium">TypeScript</span>
+                <span className="text-sm font-medium">Python</span>
+              </motion.div>
+              <motion.div
+                className="absolute  -left-4 glass-card px-4 py-2 rounded-full"
+                animate={{ y: [5, -5, 5] }}
+                transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+              >
+                <span className="text-sm font-medium">Figma</span>
               </motion.div>
               <motion.div
                 className="absolute bottom-16 -right-4 glass-card px-4 py-2 rounded-full"
@@ -90,19 +105,15 @@ const AboutSection = () => {
             <motion.span variants={itemVariants} className="text-primary font-medium mb-4 block">
               About Me
             </motion.span>
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Passionate About Creating{" "}
+            <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-display ont-bold mb-6">
+              Learning and Crafting{" "}
               <span className="gradient-text">Digital Excellence</span>
             </motion.h2>
             <motion.p variants={itemVariants} className="text-muted-foreground mb-6 leading-relaxed">
-              I'm a full-stack developer with over 5 years of experience building web applications 
-              that make a difference. My journey started with a curiosity for how things work on the 
-              internet, and it has evolved into a passion for creating seamless digital experiences.
+              I am a passionate Full stack Web developer and UI/UX Enthusiast with a strong foundation in Web Developer. I hold a B.Sc. in Computer Science and have completed specialized training to strengthen my skills in building dynamic, user-friendly web applications.
             </motion.p>
             <motion.p variants={itemVariants} className="text-muted-foreground mb-8 leading-relaxed">
-              I specialize in React, Node.js, and modern web technologies. When I'm not coding, 
-              you'll find me exploring new frameworks, contributing to open-source, or sharing 
-              knowledge through technical writing.
+              I enjoy solving complex problems through clean, efficient code and continuously expanding my knowledge. With hands-on experience from internships and personal projects, I am eager to contribute to innovative teams and create impactful digital solutions.
             </motion.p>
 
             {/* Achievement cards */}

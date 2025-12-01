@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, FileText, Eye, ExternalLink } from "lucide-react";
+import resumeDownload from "@/assets/AR-CV.pdf";
 
 const ResumeSection = () => {
   const containerVariants = {
@@ -23,22 +24,22 @@ const ResumeSection = () => {
 
   const experience = [
     {
-      role: "Senior Full-Stack Developer",
-      company: "Tech Corp",
-      period: "2022 - Present",
-      description: "Leading development of enterprise web applications using React and Node.js.",
+      role: "Bachelor's Degree",
+      company: "B.SC in Computer Science",
+      period: "2021 - 2024",
+      description: "SRM Institute of Science & Technology, SRM University Kattankulathur, Chennai, Tamilnadu.",
     },
     {
-      role: "Full-Stack Developer",
-      company: "StartUp Inc",
-      period: "2020 - 2022",
-      description: "Built and maintained multiple client projects from scratch.",
+      role: "Full-Stack Python Developer ",
+      company: "QSpiders",
+      period: "2024-2025",
+      description: "Full Stack Python Development Course | QSpiders , Velachery, Chennai - Completed.",
     },
     {
-      role: "Frontend Developer",
-      company: "Digital Agency",
-      period: "2019 - 2020",
-      description: "Developed responsive web interfaces and improved UX.",
+      role: "Full-Stack Web Developer",
+      company: "Joy Innovations",
+      period: "2025 (Apr - Jun)",
+      description: "A Full Stack Web Development Internship at Joy Innovation, where you work on both the frontend (HTML, CSS, JavaScript) and backend (PHP, SQL). The internship gives you project experience, helps you build your portfolio, and improves your practical skills in web development.",
     },
   ];
 
@@ -54,10 +55,10 @@ const ResumeSection = () => {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <span className="text-primary font-medium mb-4 block">Resume</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-            My <span className="gradient-text">Professional Journey</span>
+            My <span className="gradient-text">Journey</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A snapshot of my career, skills, and achievements. Download my full resume for more details.
+            An overview of my professional journey and capabilities. Access my full resume for further insights.
           </p>
         </motion.div>
 
@@ -69,8 +70,8 @@ const ResumeSection = () => {
                 <FileText className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-display font-semibold text-lg">John Doe - Resume</h3>
-                <p className="text-sm text-muted-foreground">Last updated: December 2024</p>
+                <h3 className="font-display font-semibold text-lg">Amalraj A - Resume</h3>
+                <p className="text-sm text-muted-foreground">Last updated: December 2025</p>
               </div>
             </div>
 
@@ -89,28 +90,33 @@ const ResumeSection = () => {
 
             {/* Action buttons */}
             <div className="flex gap-4">
-              <motion.button
+              <a href={resumeDownload} download="Amalraj-Resume.pdf">
+                <motion.button
                 className="flex-1 glow-button text-primary-foreground flex items-center justify-center gap-2"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <Download className="w-5 h-5" />
-                Download PDF
+                Download
               </motion.button>
+              </a>
+              
+              <a href={resumeDownload} target="_blank" rel="noopener noreferrer">
               <motion.button
-                className="px-6 py-4 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 flex items-center gap-2"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              className="px-6 py-4 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 flex items-center gap-2"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               >
-                <Eye className="w-5 h-5" />
+               <Eye className="w-5 h-5" />
                 Preview
               </motion.button>
+              </a>
             </div>
           </motion.div>
 
           {/* Experience Timeline */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="font-display font-semibold text-xl mb-6">Work Experience</h3>
+            <h3 className="font-display font-semibold text-xl mb-6">Education & Experience</h3>
             {experience.map((exp, index) => (
               <motion.div
                 key={exp.company}
@@ -138,14 +144,15 @@ const ResumeSection = () => {
               </motion.div>
             ))}
 
-            <motion.a
+            {/* <motion.a
               href="#"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors text-sm font-medium"
               whileHover={{ x: 5 }}
             >
               View full experience
               <ExternalLink className="w-4 h-4" />
-            </motion.a>
+            </motion.a> */}
+            
           </motion.div>
         </div>
       </motion.div>

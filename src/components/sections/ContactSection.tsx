@@ -76,9 +76,9 @@ const ContactSection = () => {
   };
 
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "hello@johndoe.dev" },
-    { icon: MapPin, label: "Location", value: "San Francisco, CA" },
-    { icon: Clock, label: "Response Time", value: "Within 24 hours" },
+    { icon: Mail, label: "Email", value: "amalrajcs712@gmail.com" },
+    { icon: MapPin, label: "Location", value: "Vellore & Chennai" },
+    { icon: Clock, label: "Phone-number", value: "+91 7010594798" },
   ];
 
   return (
@@ -95,9 +95,9 @@ const ContactSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
             Let's <span className="gradient-text">Connect</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          {/* <p className="text-muted-foreground max-w-2xl mx-auto">
             Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new opportunities.
-          </p>
+          </p> */}
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12">
@@ -131,7 +131,7 @@ const ContactSection = () => {
             ))}
 
             {/* Map or decorative element */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -144,7 +144,8 @@ const ContactSection = () => {
                   <p className="text-sm text-muted-foreground">Available worldwide</p>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
+
           </motion.div>
 
           {/* Contact Form */}
@@ -189,13 +190,14 @@ const ContactSection = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
-                          placeholder="John Doe"
+                          placeholder="Full Name"
                           className={`form-input ${errors.name ? "border-destructive" : ""}`}
                         />
                         {errors.name && (
                           <motion.p
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
+                            
                             className="text-destructive text-xs mt-1"
                           >
                             {errors.name}
@@ -209,7 +211,7 @@ const ContactSection = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
-                          placeholder="john@example.com"
+                          placeholder="amal@example.com"
                           className={`form-input ${errors.email ? "border-destructive" : ""}`}
                         />
                         {errors.email && (
@@ -231,7 +233,6 @@ const ContactSection = () => {
                         name="subject"
                         value={formData.subject}
                         onChange={handleChange}
-                        placeholder="Project Inquiry"
                         className={`form-input ${errors.subject ? "border-destructive" : ""}`}
                       />
                       {errors.subject && (
@@ -252,7 +253,6 @@ const ContactSection = () => {
                         value={formData.message}
                         onChange={handleChange}
                         rows={5}
-                        placeholder="Tell me about your project..."
                         className={`form-input resize-none ${errors.message ? "border-destructive" : ""}`}
                       />
                       {errors.message && (

@@ -2,12 +2,10 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Twitter, Instagram, Youtube, Mail } from "lucide-react";
 
 const socials = [
-  { name: "GitHub", icon: Github, href: "https://github.com", color: "#24292e" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com", color: "#0077B5" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com", color: "#1DA1F2" },
-  { name: "Instagram", icon: Instagram, href: "https://instagram.com", color: "#E4405F" },
-  { name: "YouTube", icon: Youtube, href: "https://youtube.com", color: "#FF0000" },
-  { name: "Email", icon: Mail, href: "mailto:hello@johndoe.dev", color: "#00D4FF" },
+  { name: "GitHub", icon: Github, href: "https://github.com/amalrajcs", color: "#24292e" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/amalrajcs/", color: "#0077B5" },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/ar_amal_raj/", color: "#E4405F" },
+  { name: "Email", icon: Mail, href: "mailto:amalrajcs712@gmail.com", color: "#00D4FF" },
 ];
 
 const SocialSection = () => {
@@ -25,7 +23,7 @@ const SocialSection = () => {
             Let's <span className="gradient-text">Connect</span>
           </h2>
           <p className="text-muted-foreground">
-            Follow me on social media to stay updated with my latest work and thoughts.
+            Follow me on social media to stay updated.
           </p>
         </motion.div>
 

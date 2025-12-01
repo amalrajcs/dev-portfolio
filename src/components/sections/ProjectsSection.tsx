@@ -1,42 +1,47 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ExternalLink, Github, ArrowRight } from "lucide-react";
+import { ExternalLink, Github, ArrowRight, Target } from "lucide-react";
+import infernoClub from "@/assets/Inferno Club.png";
 
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with real-time inventory management and payment processing.",
-    tags: ["React", "Node.js", "MongoDB", "Stripe"],
+    title: "Inferno-club | College Club",
+    description:
+      "Inferno Club is a stylish frontend web project built with HTML, CSS, and JavaScript.",
+    tags: ["HTML5", "CSS3", "JavaScript"],
     image: "🛒",
     gradient: "from-primary/20 to-accent/20",
-    link: "#",
-    github: "#",
+    link: "https://en4128.github.io/InfernoClub/",
+    github: "https://github.com/En4128/InfernoClub",
   },
   {
     id: 2,
-    title: "AI Dashboard",
-    description: "Analytics dashboard with AI-powered insights and beautiful data visualizations.",
-    tags: ["Next.js", "Python", "TensorFlow", "D3.js"],
+    title: "FoodyFlow",
+    description:
+      "A clean, responsive food ordering app built with TypeScript and Tailwind CSS.",
+    tags: ["Typescript", "Tailwind"],
     image: "📊",
     gradient: "from-accent/20 to-primary/20",
-    link: "#",
-    github: "#",
+    link: "https://foody-flow.vercel.app/",
+    github: "https://github.com/amalrajcs/foody-flow",
   },
   {
     id: 3,
-    title: "Social Media App",
-    description: "Real-time social platform with live messaging, stories, and content sharing.",
-    tags: ["React Native", "Firebase", "WebSocket"],
+    title: "Job Tracker Application",
+    description:
+      "A MERN stack web app designed to help users efficiently manage and track their job applications.",
+    tags: ["MERN Stack"],
     image: "💬",
     gradient: "from-primary/20 to-accent/20",
-    link: "#",
-    github: "#",
+    link: "https://job-application-tracker-webapp.vercel.app/",
+    github: "https://github.com/amalrajcs/job-application-tracker",
   },
   {
     id: 4,
     title: "Task Management Tool",
-    description: "Collaborative project management with Kanban boards and team features.",
+    description:
+      "Collaborative project management with Kanban boards and team features.",
     tags: ["Vue.js", "GraphQL", "PostgreSQL"],
     image: "✅",
     gradient: "from-accent/20 to-primary/20",
@@ -46,49 +51,54 @@ const projects = [
   {
     id: 5,
     title: "Fitness Tracker",
-    description: "Health and fitness app with workout plans and progress tracking.",
+    description:
+      "Health and fitness app with workout plans and progress tracking.",
     tags: ["React", "Express", "MongoDB"],
     image: "💪",
     gradient: "from-primary/20 to-accent/20",
     link: "#",
     github: "#",
   },
-  {
-    id: 6,
-    title: "Portfolio Generator",
-    description: "SaaS tool for developers to create stunning portfolios in minutes.",
-    tags: ["Next.js", "Tailwind", "Prisma"],
-    image: "🎨",
-    gradient: "from-accent/20 to-primary/20",
-    link: "#",
-    github: "#",
-  },
 ];
 
-const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: number }) => {
+const ProjectCard = ({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) => {
   const cardRef = useRef<HTMLDivElement>(null);
-  
+
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
   const mouseXSpring = useSpring(x);
   const mouseYSpring = useSpring(y);
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["17.5deg", "-17.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-17.5deg", "17.5deg"]);
+  const rotateX = useTransform(
+    mouseYSpring,
+    [-0.5, 0.5],
+    ["17.5deg", "-17.5deg"]
+  );
+  const rotateY = useTransform(
+    mouseXSpring,
+    [-0.5, 0.5],
+    ["-17.5deg", "17.5deg"]
+  );
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
-    
+
     const rect = cardRef.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
-    
+
     const xPct = mouseX / width - 0.5;
     const yPct = mouseY / height - 0.5;
-    
+
     x.set(xPct);
     y.set(yPct);
   };
@@ -120,7 +130,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
       >
         {/* Project image/icon */}
-        <div className={`h-40 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center mb-6 overflow-hidden`}>
+        {/* <div className={`h-40 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center mb-6 overflow-hidden`}>
           <motion.span
             className="text-6xl"
             whileHover={{ scale: 1.2, rotate: 10 }}
@@ -128,7 +138,17 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           >
             {project.image}
           </motion.span>
-        </div>
+        </div> */}
+
+        {/* <div className={`h-60 rounded-xl bg-gradient-to-br  flex items-center justify-center mb-6 overflow-hidden`}>
+         <motion.img
+         src={infernoClub}
+         alt="Inferno Club"
+         className="h-full w-full object-cover"
+         whileHover={{ scale: 1.05 }}
+         transition={{ type: "spring", stiffness: 200 }}
+        />
+        </div> */}
 
         {/* Content */}
         <h3 className="font-display font-semibold text-xl mb-2 group-hover:gradient-text transition-all">
@@ -154,6 +174,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
         <div className="flex items-center gap-4 pt-4 border-t border-border">
           <motion.a
             href={project.link}
+            target="_blank"
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
             whileHover={{ x: 3 }}
           >
@@ -162,6 +183,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
           </motion.a>
           <motion.a
             href={project.github}
+            target="_blank"
             className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
             whileHover={{ x: 3 }}
           >
@@ -174,7 +196,21 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0]; index: n
   );
 };
 
-const ProjectsSection = () => {
+interface ProjectsSectionProps {
+  limit?: number;
+  onViewMore?: () => void;
+  showViewMoreButton?: boolean;
+}
+
+const ProjectsSection = ({
+  limit,
+  onViewMore,
+  showViewMoreButton = true,
+}: ProjectsSectionProps = {}) => {
+  const displayedProjects =
+    typeof limit === "number" ? projects.slice(0, limit) : projects;
+  const shouldShowButton =
+    showViewMoreButton && displayedProjects.length < projects.length;
   return (
     <section id="projects" className="section-container">
       <div className="max-w-7xl mx-auto w-full">
@@ -190,34 +226,38 @@ const ProjectsSection = () => {
             Featured <span className="gradient-text">Work</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            A collection of projects I've worked on. Each one taught me something new and helped me grow as a developer.
+            Here are the projects I’ve created, each one shaping my skills and
+            experience.
           </p>
         </motion.div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
 
-        {/* View All Button */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-12"
-        >
-          <motion.button
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 font-display font-medium"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+        {shouldShowButton && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="text-center mt-12"
           >
-            View All Projects
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
-        </motion.div>
+            <motion.button
+              onClick={() => onViewMore?.()}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 font-display font-medium"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              disabled={!onViewMore}
+            >
+              View More Projects
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
+          </motion.div>
+        )}
       </div>
     </section>
   );

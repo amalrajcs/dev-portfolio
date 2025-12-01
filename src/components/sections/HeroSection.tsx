@@ -49,7 +49,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             <div className="absolute inset-0 rounded-full bg-gradient-primary animate-pulse opacity-50 blur-xl" />
             <img
               src={profileImage}
-              alt="John Doe - Full Stack Developer"
+              alt="Amalraj - Full Stack Developer"
               className="relative w-full h-full rounded-full object-cover border-4 border-primary/30 shadow-2xl"
             />
             <motion.div
@@ -65,13 +65,13 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         {/* Badge */}
         <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
           <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm text-muted-foreground">Available for new projects</span>
+          <span className="text-sm text-muted-foreground">Design. Build. Grow.</span>
         </motion.div>
 
         {/* Main heading */}
         <motion.h1 variants={itemVariants} className="text-4xl md:text-6xl lg:text-7xl font-display font-bold leading-tight mb-6">
           Hi, I'm{" "}
-          <span className="gradient-text">John Doe</span>
+          <span className="gradient-text">Amal Raj</span>
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -83,48 +83,20 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         </motion.h1>
 
         {/* Subtitle */}
-        <motion.p variants={itemVariants} className="text-xl md:text-2xl text-muted-foreground mb-4">
-          Full-Stack Developer & UI/UX Enthusiast
+        <motion.p variants={itemVariants} className="text-xl text-white md:text-2xl text-muted-foreground mb-4">
+          Web Developer & UI/UX Enthusiast
         </motion.p>
 
         {/* Description */}
         <motion.p variants={itemVariants} className="text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-12">
-          I craft beautiful, performant web experiences with modern technologies. 
-          Passionate about clean code, innovative design, and bringing ideas to life.
+          I build fast, elegant, and modern web experiences with a focus on clean code and creative design.
         </motion.p>
-
-        {/* Stats */}
-        <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-8 md:gap-16 mb-12">
-          {[
-            { value: "5+", label: "Years Experience" },
-            { value: "50+", label: "Projects Completed" },
-            { value: "30+", label: "Happy Clients" },
-          ].map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              className="text-center"
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <div className="text-3xl md:text-4xl font-display font-bold gradient-text">{stat.value}</div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
 
         {/* CTA Buttons */}
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
           <motion.button
-            onClick={() => onNavigate("contact")}
-            className="glow-button text-primary-foreground font-display"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Let's Work Together
-          </motion.button>
-          <motion.button
             onClick={() => onNavigate("projects")}
-            className="px-8 py-4 rounded-full font-semibold border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 font-display"
+            className="px-8 py-4 rounded-full font-semibold border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 font-display -my-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -137,7 +109,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="absolute bottom-3 left-1/2  -translate-x-1/2"
         >
           <motion.button
             onClick={() => onNavigate("about")}

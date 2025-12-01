@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedBackground from "@/components/AnimatedBackground";
 import Navigation from "@/components/Navigation";
@@ -10,11 +11,13 @@ import SkillsSection from "@/components/sections/SkillsSection";
 import ContactSection from "@/components/sections/ContactSection";
 import SocialSection from "@/components/sections/SocialSection";
 import Footer from "@/components/Footer";
+import CustomCursor from "@/components/CustomCursor";
 
 const sections = ["hero", "about", "resume", "projects", "skills", "contact"];
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("hero");
+  const navigate = useNavigate();
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,6 +51,7 @@ const Index = () => {
     <div ref={containerRef} className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* Animated Background */}
       <AnimatedBackground />
+      <CustomCursor />
 
       {/* Navigation */}
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
@@ -71,7 +75,7 @@ const Index = () => {
           <ResumeSection />
 
           {/* Projects Section */}
-          <ProjectsSection />
+          <ProjectsSection limit={3} onViewMore={() => navigate("/projects")} />
 
           {/* Skills Section */}
           <SkillsSection />
