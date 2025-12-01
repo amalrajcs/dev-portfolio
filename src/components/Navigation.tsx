@@ -10,11 +10,9 @@ interface NavigationProps {
 const sections = [
   { id: "hero", label: "Home" },
   { id: "about", label: "About" },
-  { id: "cta", label: "Hire Me" },
+  { id: "resume", label: "Resume" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
-  { id: "articles", label: "Articles" },
-  { id: "profiles", label: "Profiles" },
   { id: "contact", label: "Contact" },
 ];
 
