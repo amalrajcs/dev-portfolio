@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "amalrajportfolio"
-  }
+  },
+  "targets": {
+    "amalrajportfolio": {
+      "hosting": {
+        "main": [
+          "amalrajportfolio"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }

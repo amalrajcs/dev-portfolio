@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "amalraj",
+    "site": "amalrajportfolio",
     "public": "dist",
     "ignore": [
       "firebase.json",
