@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Download, FileText, Eye, ExternalLink } from "lucide-react";
-import resumeDownload from "@/assets/AR-CV.pdf";
+import resumeDownload from "@/assets/Amalraj-Resume.pdf";
 
 const ResumeSection = () => {
   const containerVariants = {
