@@ -37,7 +37,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         className="max-w-4xl mx-auto text-center"
       >
         {/* Profile Image */}
-        <motion.div 
+        <motion.div
           variants={itemVariants}
           className="mb-8"
         >
@@ -65,7 +65,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         {/* Badge */}
         <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8">
           <Sparkles className="w-4 h-4 text-primary" />
-          <span className="text-sm text-muted-foreground">Design. Build. Grow.</span>
+          <span className="text-sm text-muted-foreground font-light">Design. Build. Grow.</span>
         </motion.div>
 
         {/* Main heading */}
@@ -83,9 +83,9 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         </motion.h1>
 
         {/* Subtitle */}
-        <motion.p variants={itemVariants} className="text-xl text-white md:text-2xl text-muted-foreground mb-4">
+        <motion.h2 variants={itemVariants} className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium">
           Web Developer & UI/UX Enthusiast
-        </motion.p>
+        </motion.h2>
 
         {/* Description */}
         <motion.p variants={itemVariants} className="text-base md:text-lg text-muted-foreground/80 max-w-2xl mx-auto mb-12">
@@ -96,7 +96,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center">
           <motion.button
             onClick={() => onNavigate("projects")}
-            className="px-8 py-4 rounded-full font-semibold border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 font-display -my-2"
+            className="px-8 py-4 rounded-full font-medium border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 font-display -my-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -122,7 +122,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
           </motion.button>
         </motion.div>
       </motion.div>
-    </section>
+    </section >
   );
 };
 

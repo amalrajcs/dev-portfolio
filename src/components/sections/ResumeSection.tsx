@@ -70,8 +70,8 @@ const ResumeSection = () => {
                 <FileText className="w-6 h-6 text-primary-foreground" />
               </div>
               <div>
-                <h3 className="font-display font-semibold text-lg">Amalraj A - Resume</h3>
-                <p className="text-sm text-muted-foreground">Last updated: December 2025</p>
+                <h3 className="font-display font-bold text-lg">Amalraj A - Resume</h3>
+                <p className="text-sm text-muted-foreground font-light">Last updated: December 2025</p>
               </div>
             </div>
 
@@ -92,31 +92,31 @@ const ResumeSection = () => {
             <div className="flex gap-4">
               <a href={resumeDownload} download="Amalraj-Resume.pdf">
                 <motion.button
-                className="flex-1 glow-button text-primary-foreground flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Download className="w-5 h-5" />
-                Download
-              </motion.button>
+                  className="flex-1 glow-button text-primary-foreground flex items-center justify-center gap-2"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Download className="w-5 h-5" />
+                  Download
+                </motion.button>
               </a>
-              
+
               <a href={resumeDownload} target="_blank" rel="noopener noreferrer">
-              <motion.button
-              className="px-6 py-4 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 flex items-center gap-2"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              >
-               <Eye className="w-5 h-5" />
-                Preview
-              </motion.button>
+                <motion.button
+                  className="px-6 py-4 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 flex items-center gap-2 font-medium"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Eye className="w-5 h-5" />
+                  Preview
+                </motion.button>
               </a>
             </div>
           </motion.div>
 
           {/* Experience Timeline */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <h3 className="font-display font-semibold text-xl mb-6">Education & Experience</h3>
+            <h3 className="font-display font-bold text-xl mb-6">Education & Experience</h3>
             {experience.map((exp, index) => (
               <motion.div
                 key={exp.company}
@@ -128,14 +128,14 @@ const ResumeSection = () => {
               >
                 {/* Timeline dot */}
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-background border-2 border-primary" />
-                
+
                 <div className="glass-card p-4 rounded-xl hover:border-primary/20 transition-colors">
                   <div className="flex items-start justify-between mb-2">
                     <div>
-                      <h4 className="font-display font-semibold">{exp.role}</h4>
-                      <p className="text-primary text-sm">{exp.company}</p>
+                      <h4 className="font-display font-bold">{exp.role}</h4>
+                      <p className="text-primary text-sm font-medium">{exp.company}</p>
                     </div>
-                    <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-full">
+                    <span className="text-xs text-muted-foreground bg-secondary px-2 py-1 rounded-full font-light">
                       {exp.period}
                     </span>
                   </div>
@@ -152,7 +152,7 @@ const ResumeSection = () => {
               View full experience
               <ExternalLink className="w-4 h-4" />
             </motion.a> */}
-            
+
           </motion.div>
         </div>
       </motion.div>

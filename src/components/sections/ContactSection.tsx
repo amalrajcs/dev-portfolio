@@ -17,49 +17,49 @@ const ContactSection = () => {
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
     }
-    
+
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email";
     }
-    
+
     if (!formData.subject.trim()) {
       newErrors.subject = "Subject is required";
     }
-    
+
     if (!formData.message.trim()) {
       newErrors.message = "Message is required";
     } else if (formData.message.length < 10) {
       newErrors.message = "Message must be at least 10 characters";
     }
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
-    
+
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    
+
     setIsSubmitting(false);
     setIsSuccess(true);
-    
+
     toast({
       title: "Message sent!",
       description: "Thank you for reaching out. I'll get back to you soon!",
     });
-    
+
     // Reset after animation
     setTimeout(() => {
       setIsSuccess(false);
@@ -109,8 +109,8 @@ const ContactSection = () => {
             transition={{ duration: 0.8 }}
             className="lg:col-span-2 space-y-6"
           >
-            <h3 className="font-display font-semibold text-xl">Get in Touch</h3>
-            
+            <h3 className="font-display font-bold text-xl">Get in Touch</h3>
+
             {contactInfo.map((item, index) => (
               <motion.div
                 key={item.label}
@@ -173,7 +173,7 @@ const ContactSection = () => {
                     >
                       <CheckCircle className="w-20 h-20 text-primary mb-6" />
                     </motion.div>
-                    <h3 className="font-display font-semibold text-2xl mb-2">Message Sent!</h3>
+                    <h3 className="font-display font-bold text-2xl mb-2">Message Sent!</h3>
                     <p className="text-muted-foreground">Thank you for reaching out. I'll get back to you soon!</p>
                   </motion.div>
                 ) : (
@@ -197,7 +197,7 @@ const ContactSection = () => {
                           <motion.p
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
-                            
+
                             className="text-destructive text-xs mt-1"
                           >
                             {errors.name}

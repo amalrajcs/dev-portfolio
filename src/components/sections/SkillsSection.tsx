@@ -1,12 +1,12 @@
 import { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { 
-  Code2, 
-  FileCode, 
-  Server, 
-  Database, 
-  Cloud, 
-  Container, 
+import {
+  Code2,
+  FileCode,
+  Server,
+  Database,
+  Cloud,
+  Container,
   Palette,
   Terminal,
   GitBranch,
@@ -44,7 +44,7 @@ const AnimatedCounter = ({ value, isInView }: { value: number; isInView: boolean
 
   useEffect(() => {
     if (!isInView) return;
-    
+
     let start = 0;
     const end = value;
     const duration = 2000;
@@ -53,11 +53,11 @@ const AnimatedCounter = ({ value, isInView }: { value: number; isInView: boolean
     const timer = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      
+
       // Ease out cubic
       const easeOut = 1 - Math.pow(1 - progress, 3);
       setCount(Math.floor(easeOut * end));
-      
+
       if (progress >= 1) {
         clearInterval(timer);
       }
@@ -71,7 +71,7 @@ const AnimatedCounter = ({ value, isInView }: { value: number; isInView: boolean
 
 const SkillBar = ({ skill, index, isInView }: { skill: typeof skills[0]; index: number; isInView: boolean }) => {
   const IconComponent = skill.icon;
-  
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -30 }}
@@ -90,7 +90,7 @@ const SkillBar = ({ skill, index, isInView }: { skill: typeof skills[0]; index: 
           </motion.div>
           <span className="font-medium">{skill.name}</span>
         </div>
-        <span className="text-primary font-display font-semibold">
+        <span className="text-primary font-display font-bold">
           <AnimatedCounter value={skill.level} isInView={isInView} />
         </span>
       </div>
@@ -132,7 +132,7 @@ const SkillsSection = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Skills bars */}
           <div className="space-y-6">
-            <h3 className="font-display font-semibold text-xl mb-6">Technical Skills</h3>
+            <h3 className="font-display font-bold text-xl mb-6">Technical Skills</h3>
             {skills.map((skill, index) => (
               <SkillBar key={skill.name} skill={skill} index={index} isInView={isInView} />
             ))}
@@ -140,7 +140,7 @@ const SkillsSection = () => {
 
           {/* Tools & Tech */}
           <div>
-            <h3 className="font-display font-semibold text-xl mb-6">Tools & Technologies</h3>
+            <h3 className="font-display font-bold text-xl mb-6">Tools & Technologies</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
               {tools.map((tool, index) => {
                 const IconComponent = tool.icon;
@@ -175,7 +175,7 @@ const SkillsSection = () => {
               transition={{ delay: 0.5 }}
               className="glass-card p-6 rounded-2xl mt-6"
             >
-              <h4 className="font-display font-semibold mb-3">Always Learning</h4>
+              <h4 className="font-display font-bold mb-3">Always Learning</h4>
               <p className="text-sm text-muted-foreground mb-4">
                 Always learning — Currently exploring advanced web development and UI/UX design to create modern, user-focused digital experiences.
               </p>
@@ -183,7 +183,7 @@ const SkillsSection = () => {
                 {["AI", "System Design", "Dev"].map((topic) => (
                   <span
                     key={topic}
-                    className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary"
+                    className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary font-light"
                   >
                     {topic}
                   </span>

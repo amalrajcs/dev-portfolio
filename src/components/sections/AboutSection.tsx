@@ -52,7 +52,7 @@ const AboutSection = () => {
                 animate={{ rotate: -360 }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
               />
-              
+
               {/* Main image container */}
               <div className="absolute inset-8 rounded-full glass-card overflow-hidden">
 
@@ -61,11 +61,11 @@ const AboutSection = () => {
                 </div> */}
 
                 <div className="absolute inset-0 rounded-full bg-gradient-primary animate-pulse opacity-50 blur-xl" />
-            <img
-              src={abtImage}
-              alt="Amalraj - Full Stack Developer"
-              className="relative w-full h-full rounded-full object-cover border-4 border-primary/30 shadow-2xl"
-            />
+                <img
+                  src={abtImage}
+                  alt="Amalraj - Full Stack Developer"
+                  className="relative w-full h-full rounded-full object-cover border-4 border-primary/30 shadow-2xl"
+                />
               </div>
 
               {/* Floating badges */}
@@ -105,7 +105,7 @@ const AboutSection = () => {
             <motion.span variants={itemVariants} className="text-primary font-medium mb-4 block">
               About Me
             </motion.span>
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-display ont-bold mb-6">
+            <motion.h2 variants={itemVariants} className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
               Learning and Crafting{" "}
               <span className="gradient-text">Digital Excellence</span>
             </motion.h2>
@@ -126,8 +126,8 @@ const AboutSection = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <achievement.icon className="w-8 h-8 text-primary mb-2" />
-                  <h3 className="font-display font-semibold mb-1">{achievement.title}</h3>
-                  <p className="text-xs text-muted-foreground">{achievement.description}</p>
+                  <h3 className="font-display font-bold mb-1">{achievement.title}</h3>
+                  <p className="text-xs text-muted-foreground font-light">{achievement.description}</p>
                 </motion.div>
               ))}
             </motion.div>

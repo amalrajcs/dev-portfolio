@@ -6,6 +6,18 @@ import infernoClub from "@/assets/Inferno Club.png";
 const projects = [
   {
     id: 1,
+    title: "Pulse Fitness | 3D Wellness",
+    description:
+      "A high-performance 3D fitness landing page featuring an interactive hero section with floating dumbbells, custom WebGL shaders, and a cinematic loader.",
+    tags: ["React.js", "Three.js", "Framer Motion", "WebGL"],
+    image: "⚡",
+    gradient: "from-red-500/20 to-zinc-900/20",
+    link: "https://pulsefitness.vercel.app/",
+    github: "https://github.com/amalrajcs/pulse-fitness",
+    category: "web",
+  },
+  {
+    id: 2,
     title: "Inferno-club | College Club",
     description:
       "Inferno Club is a stylish frontend web project built with HTML, CSS, and JavaScript.",
@@ -14,17 +26,7 @@ const projects = [
     gradient: "from-primary/20 to-accent/20",
     link: "https://en4128.github.io/InfernoClub/",
     github: "https://github.com/En4128/InfernoClub",
-  },
-  {
-    id: 2,
-    title: "FoodyFlow",
-    description:
-      "A clean, responsive food ordering app built with TypeScript and Tailwind CSS.",
-    tags: ["Typescript", "Tailwind"],
-    image: "📊",
-    gradient: "from-accent/20 to-primary/20",
-    link: "https://foody-flow.vercel.app/",
-    github: "https://github.com/amalrajcs/foody-flow",
+    category: "web",
   },
   {
     id: 3,
@@ -36,9 +38,22 @@ const projects = [
     gradient: "from-primary/20 to-accent/20",
     link: "https://job-application-tracker-webapp.vercel.app/",
     github: "https://github.com/amalrajcs/job-application-tracker",
+    category: "web",
   },
   {
     id: 4,
+    title: "FoodyFlow",
+    description:
+      "A clean, responsive food ordering app built with TypeScript and Tailwind CSS.",
+    tags: ["Typescript", "Tailwind"],
+    image: "📊",
+    gradient: "from-accent/20 to-primary/20",
+    link: "https://foody-flow.vercel.app/",
+    github: "https://github.com/amalrajcs/foody-flow",
+    category: "web",
+  },
+  {
+    id: 5,
     title: "Weather App",
     description:
       "A weather application that fetches real-time weather data using a public API. Users can search cities to view temperature, humidity, wind speed, and weather conditions with dynamic UI updates.",
@@ -47,9 +62,10 @@ const projects = [
     gradient: "from-accent/20 to-primary/20",
     link: "https://todayweatherinfo.netlify.app/",
     github: "https://github.com/amalrajcs/weather-app",
+    category: "web",
   },
   {
-    id: 5,
+    id: 6,
     title: "EMI Calculator",
     description:
       "A EMI calculator that allows users to calculate monthly loan installments based on principal amount, interest rate, and tenure. Features real-time calculation with an intuitive and user-friendly interface.",
@@ -58,9 +74,10 @@ const projects = [
     gradient: "from-green-400/20 to-emerald-400/20",
     link: "https://amalrajcs.github.io/emi-calculator/",
     github: "https://github.com/amalrajcs/emi-calculator",
+    category: "web",
   },
   {
-    id: 6,
+    id: 7,
     title: "EV Landing Page",
     description:
       "A modern electric vehicle landing page designed with a clean UI layout. Showcases product highlights, features, and call-to-action sections with smooth visual structure and mobile-friendly design.",
@@ -69,9 +86,10 @@ const projects = [
     gradient: "from-green-400/20 to-emerald-400/20",
     link: "https://zenvolt.netlify.app/",
     github: "https://github.com/amalrajcs/ev-webpage",
+    category: "web",
   },
   {
-    id: 7,
+    id: 8,
     title: "Admin Workflow UX Web Design",
     description:
       "Designed a structured admin workflow dashboard in Figma focusing on usability, clear data hierarchy, and streamlined task management. Created wireframes, user flows, and high-fidelity UI screens with a clean and modern interface.",
@@ -79,9 +97,11 @@ const projects = [
     image: "🎨",
     gradient: "from-green-400/20 to-emerald-400/20",
     link: "https://www.figma.com/design/ncZPbDmsZtADeLNeUwC2DY/Solytics-Partners-%E2%80%93-Admin-Workflow-UX?node-id=0-1&t=QNmDYy3owOyeU8Uf-1",
+    github: "https://www.figma.com/design/ncZPbDmsZtADeLNeUwC2DY/Solytics-Partners-%E2%80%93-Admin-Workflow-UX?node-id=0-1&t=QNmDYy3owOyeU8Uf-1",
+    category: "design",
   },
   {
-    id: 8,
+    id: 9,
     title: "Student Management System Design",
     description:
       "Crafted a comprehensive UI/UX design for a Student Management System in Figma, focusing on intuitive navigation, clear data presentation, and seamless user flows for administrators and students. Includes layouts for dashboards, profiles, and key system functions.",
@@ -89,9 +109,11 @@ const projects = [
     image: "📚",
     gradient: "from-yellow-300/20 to-orange-400/20",
     link: "https://www.figma.com/design/QiyeBbutJqbqwoDDj0OV8x/Student-Management-System?t=QNmDYy3owOyeU8Uf-1",
+    github: "https://www.figma.com/design/QiyeBbutJqbqwoDDj0OV8x/Student-Management-System?t=QNmDYy3owOyeU8Uf-1",
+    category: "design",
   },
   {
-    id: 9,
+    id: 10,
     title: "Cafe App Design",
     description:
       "Created a user-centric mobile interface for a Cafe App in Figma, focusing on seamless browsing, easy ordering flows, and visually appealing screens. Designed high-fidelity layouts with consistent styling and interactive prototype elements.",
@@ -99,6 +121,8 @@ const projects = [
     image: "☕",
     gradient: "from-amber-300/20 to-red-400/20",
     link: "https://www.figma.com/design/ds1Nl5UjzP20R9QaNwChwd/Cafe-app?t=QNmDYy3owOyeU8Uf-1",
+    github: "https://www.figma.com/design/ds1Nl5UjzP20R9QaNwChwd/Cafe-app?t=QNmDYy3owOyeU8Uf-1",
+    category: "design",
   },
 ];
 
@@ -192,7 +216,7 @@ const ProjectCard = ({
         </div> */}
 
         {/* Content */}
-        <h3 className="font-display font-semibold text-xl mb-2 group-hover:gradient-text transition-all">
+        <h3 className="font-display font-bold text-xl mb-2 group-hover:gradient-text transition-all">
           {project.title}
         </h3>
         <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
@@ -204,7 +228,7 @@ const ProjectCard = ({
           {project.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="px-2 py-1 text-xs rounded-full bg-secondary text-muted-foreground"
+              className="px-2 py-1 text-xs rounded-full bg-secondary text-muted-foreground font-light"
             >
               {tag}
             </span>
@@ -216,7 +240,7 @@ const ProjectCard = ({
           <motion.a
             href={project.link}
             target="_blank"
-            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
             whileHover={{ x: 3 }}
           >
             <ExternalLink className="w-4 h-4" />
@@ -225,15 +249,15 @@ const ProjectCard = ({
           <motion.a
             href={project.github}
             target="_blank"
-            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
+            className="flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors font-medium"
             whileHover={{ x: 3 }}
           >
             <Github className="w-4 h-4" />
             Source
           </motion.a>
         </div>
-      </motion.div>
-    </motion.div>
+      </motion.div >
+    </motion.div >
   );
 };
 
@@ -248,13 +272,19 @@ const ProjectsSection = ({
   onViewMore,
   showViewMoreButton = true,
 }: ProjectsSectionProps = {}) => {
-  const displayedProjects =
-    typeof limit === "number" ? projects.slice(0, limit) : projects;
+  const webProjects = projects.filter((p) => p.category === "web");
+  const designProjects = projects.filter((p) => p.category === "design");
+
+  const displayedWebProjects =
+    typeof limit === "number" ? webProjects.slice(0, limit) : webProjects;
+
   const shouldShowButton =
-    showViewMoreButton && displayedProjects.length < projects.length;
+    showViewMoreButton && (displayedWebProjects.length < webProjects.length || designProjects.length > 0 && typeof limit === "number");
+
   return (
     <section id="projects" className="section-container">
       <div className="max-w-7xl mx-auto w-full">
+        {/* Web Projects Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -267,14 +297,13 @@ const ProjectsSection = ({
             Featured <span className="gradient-text">Work</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Here are the projects I’ve created, each one shaping my skills and
+            Here are the development projects I’ve created, each one shaping my skills and
             experience.
           </p>
         </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {displayedProjects.map((project, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
+          {displayedWebProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
@@ -285,19 +314,50 @@ const ProjectsSection = ({
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
-            className="text-center mt-12"
+            className="text-center mt-12 mb-24"
           >
             <motion.button
-              onClick={() => onViewMore?.()}
+              onClick={() => {
+                if (onViewMore) {
+                  onViewMore();
+                  // Ensure we scroll to top after navigation
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border hover:border-primary/50 hover:bg-primary/5 transition-all duration-300 font-display font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              disabled={!onViewMore}
             >
               View More Projects
               <ArrowRight className="w-5 h-5" />
             </motion.button>
           </motion.div>
+        )}
+
+        {/* Design Projects Section */}
+        {designProjects.length > 0 && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+                Design <span className="gradient-text">Work</span>
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                My UI/UX design explorations and prototypes, focusing on usability and aesthetics.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {designProjects.map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index + webProjects.length} />
+              ))}
+            </div>
+          </>
         )}
       </div>
     </section>
